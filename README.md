@@ -14,10 +14,12 @@
 [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/NgTxy20sC5I)
 
 ### 收获
+- 本来运行之后在logcat那里会有运行时间xxxms的提示，运行起来也比较慢、卡.....专门去改了改就没了....找问题用的方法比较原始，猜测可能的问题代码段，注释掉再运行看效果...也可以使用性能分析工具
 - 手势处理与事件分发传递：ImageActivity
 - PaperView（缓存三页）
 - 自定义遮罩：ShadowImageView(继承自ImageView，重写绘制函数从而在上面镂空绘字)
-- Glide4.x的使用，在获取其缓存图片位置和结合下载进度条时卡了很久
+- 一开始直接将大图放到imageview中导致OOM
+使用熟练后，却也在获取其缓存图片位置和结合下载进度条时卡了很久
 ```Java
 GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath();
 //                已经失效了的办法,我上传项目中保留了DataCacheKey....当时为了实现这个功能还去看了源码，不过现在忘得差不对了
