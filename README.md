@@ -1,4 +1,4 @@
-<img src="https://github.com/ExplosiveBattery/zhimingdi-android/blob/master/README/%E6%A4%8D%E5%90%8D%E5%9C%B0.jpg?raw=true" width="200">  ![picture](https://img.shields.io/badge/language-java-blue.svg?longCache=true&language=java) ![picture](https://img.shields.io/badge/language-java-blue.svg?longCache=true&language=java)
+<img src="https://github.com/ExplosiveBattery/zhimingdi-android/blob/master/README/%E6%A4%8D%E5%90%8D%E5%9C%B0.jpg?raw=true" width="200">  ![language](https://img.shields.io/badge/language-java-blue.svg?longCache=true&language=java) ![buildIDE](https://img.shields.io/badge/build-android--studio3-green.svg?longCache=true&build=android-studio3)
 
 
 ### 起源
@@ -13,3 +13,20 @@
 [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/NgTxy20sC5I)
 
 ### 收获
+- 手势处理与事件分发传递：ImageActivity
+- PaperView（缓存三页）
+- 自定义遮罩：ShadowImageView(继承自ImageView，重写绘制函数从而在上面镂空绘字)
+- Glide4.x的使用，在获取其缓存图片位置和结合下载进度条时卡了很久
+```Java
+GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath();
+//                已经失效了的办法,我上传项目中保留了DataCacheKey....当时为了实现这个功能还去看了源码，不过现在忘得差不对了
+//                DiskCache disk  = DiskLruCacheWrapper.get(GlideApp.getPhotoCacheDir(MultiImageActivity.this), 250 * 1024 * 1024);
+//                DataCacheKey dataCacheKey = new DataCacheKey(new GlideUrl(url), EmptySignature.obtain());
+//                File file =disk.get(dataCacheKey);
+```
+下载进度条见ProgressAppGlideModule文件与GlideImageLoader
+- GridSpacingItemDecoration文件为RecyclerView的GridLayoutManager提供了合适的间隔
+- 按钮移动动画后可能会遇到无法点击的情况，才明白按钮可以认为是个两层控件，一层用于显示，一层用于响应事件。所以在移动动画结束时，使用了offsetTopAndBottom，确保可以响应点击。详见MainActivity的setShareAnimation()
+- 数据库存储与SharedPreferences（xml存储）都试着用了一遍
+- retrofit网络部分见/model/network/...
+- 时间借助joda库
