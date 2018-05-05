@@ -34,5 +34,5 @@ GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath()
 - retrofit网络部分见/model/network/...
 - 时间借助joda库
 
-### License
+### 协议
 Apache 2.0
