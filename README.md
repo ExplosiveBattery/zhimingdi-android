@@ -1,4 +1,4 @@
-<img src="https://github.com/ExplosiveBattery/zhimingdi-android/blob/master/README/%E6%A4%8D%E5%90%8D%E5%9C%B0.jpg?raw=true" width="200">  ![language](https://img.shields.io/badge/language-java-blue.svg?longCache=true&language=java) ![buildIDE](https://img.shields.io/badge/build-android--studio3-green.svg?longCache=true&build=android-studio3)
+<img src="https://github.com/ExplosiveBattery/zhimingdi-android/blob/master/README/%E6%A4%8D%E5%90%8D%E5%9C%B0.jpg?raw=true" width="200">  ![language](https://img.shields.io/badge/language-java-blue.svg?longCache=true&language=java) ![buildIDE](https://img.shields.io/badge/build-android--studio3-green.svg?longCache=true&build=android-studio3) ![license](https://img.shields.io/badge/license-apache2.0-green.svg?longCache=true&license=apache2.0)
 
 
 ### 起源
@@ -33,3 +33,6 @@ GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath()
 - 数据库存储与SharedPreferences（xml存储）都试着用了一遍
 - retrofit网络部分见/model/network/...
 - 时间借助joda库
+
+### License
+Apache 2.0
