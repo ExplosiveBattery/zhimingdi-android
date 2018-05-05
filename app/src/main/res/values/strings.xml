@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">植名地</string>
+
+    <!--LoginActivity-->
+    <string name="login_QQ">使用QQ登录</string>
+    <string name="login_WeChat">使用微信登录</string>
+    <string name="login_WeiBo">使用微博登录</string>
+
+    <!--drawer-->
+    <string name="star_pic">收藏图片</string>
+    <string name="pic_history">历史图谱</string>
+    <string name="clear_cache">清理缓存</string>
+    <string name="donate">捐赠帮助</string>
+    <string name="logout">注销</string>
+    <string name="nickname">昵称</string>
+    <!--SDK-->
+    <string name="qq_sdk_id">xxx</string>
+    <string name="weibo_sdk_id">xxx</string>
+    <string name="wechat_sdk_id">xxx</string>
+    <string name="weibo_redirect_url">https://api.weibo.com/oauth2/default.html</string>
+
+    <!--MainActivity-->
+    <string name="share_note_hint">说点什么吧</string>
+    <string name="back_to_today">回到今日</string>
+
+    <item  type="id" name="isDownload"></item>
+</resources>

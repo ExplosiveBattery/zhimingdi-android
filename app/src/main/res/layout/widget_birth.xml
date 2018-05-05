@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="姓名 "
+        android:textSize="14sp"
+        />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:maxLines="1"
+        android:layout_toRightOf="@+id/textview"
+        android:textSize="17sp"
+        android:gravity="center"
+        tools:text="年后"
+        />
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出生日期 "
+        android:textSize="14sp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/textview"
+        />
+    <FrameLayout
+        android:id="@+id/birth_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview2"
+        android:background="@android:color/white"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>

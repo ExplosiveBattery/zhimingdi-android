@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/drawer_bg"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/drawer_img_avatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/image_placeholder" />
+            <TextView
+                android:id="@+id/drawer_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/nickname"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/drawer_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/logout"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <Space style="@style/AppWidget.Gap" />
+
+
+    <cn.hellovega.zhimingdi.ui.widget.NavigationItem
+        android:id="@+id/drawer_star_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/star_pic" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#aa000000" />
+    <cn.hellovega.zhimingdi.ui.widget.NavigationItem
+        android:id="@+id/drawer_pic_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/pic_history" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#aa000000" />
+    <cn.hellovega.zhimingdi.ui.widget.NavigationItem
+        android:id="@+id/drawer_clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/clear_cache" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#aa000000" />
+    <cn.hellovega.zhimingdi.ui.widget.NavigationItem
+        android:id="@+id/drawer_donate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/donate" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        />
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:src="@drawable/drawer_hard_sport" />-->
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NavigationItem">
+        <attr name="icon" format="reference" />
+        <attr name="title" format="string" />
+    </declare-styleable>
+
+
+</resources>

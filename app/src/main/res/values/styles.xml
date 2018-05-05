@@ -1,0 +1,34 @@
+<resources>
+
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="Theme.AppCompat.Light">
+        <item name="android:typeface">monospace</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <!-- 如果加载的背景图过大, 会有一段时间变全黑. backgroud包含了虚拟按键的背后,所以字不能太下面 -->
+        <!-- 只需要将启动Activity的theme设置为这个就好-->
+        <item name="android:windowBackground">@drawable/launcher</item>
+        <!--底部虚拟按键透明-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppWidget" parent="Theme.AppCompat.Light" />
+    <style name="AppWidget.Gap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
+
+
+
+
+
+</resources>

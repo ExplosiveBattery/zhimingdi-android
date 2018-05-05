@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--backgroud 不能提前设置,否则会遮挡阴影效果-->
+    <cn.hellovega.zhimingdi.ui.widget.ShadowImageView
+        android:id="@+id/shadowImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="matrix"/>
+
+    <com.todddavies.components.progressbar.ProgressWheel
+        android:id="@+id/progressbar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:pwContourColor="#330097D6"
+        app:pwBarLength="60dp"
+        app:pwBarColor="#0097D6"
+        app:pwBarWidth="5dp"
+        app:pwRimColor="#330097D6"
+        app:pwRimWidth="5dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible"
+        />
+</FrameLayout>
