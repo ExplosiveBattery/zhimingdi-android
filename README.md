@@ -33,6 +33,6 @@ GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath()
 - 数据库存储与SharedPreferences（xml存储）都试着用了一遍
 - retrofit网络部分见/model/network/...
 - 时间借助joda库
-- 用到了QQ、新浪微博的登录以及分享。微信因为不提供个人开发者登录功能，便只有分享。
+- 用到了QQ、新浪微博的登录以及分享。微信因为不提供个人开发者登录功能，便只有分享。图文分享其可以直接将文字绘制到图片上然后去分享图片。
 ### 开源协议
 Apache 2.0
