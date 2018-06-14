@@ -2,10 +2,10 @@ package cn.hellovega.zhimingdi.ui.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +17,8 @@ import com.sina.weibo.sdk.auth.WbConnectErrorMessage;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.common.Constants;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
@@ -46,8 +48,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //tencent sdk
     public static Tencent mTencent=null;
     private BaseUiListener loginListener=new BaseUiListener("login");
-//weibo sdk
+    //weibo sdk
     private SsoHandler mSsoHandler=null;
+    //weixin sdk
+    public static IWXAPI wxApi;
+
 //network
 
     private Handler requestHandler = new Handler() {
@@ -133,6 +138,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //初始化微信 SDK
         //微信的SDk 因为不支持登录所以放到了分享的MainActivity
+        //为了微信分享 SDK初始化
+        wxApi = WXAPIFactory.createWXAPI(this, getString(R.string.wechat_sdk_id), true);
+        wxApi.registerApp(getString(R.string.wechat_sdk_id));
 
         //初始化 微博 SDK
         WbSdk.install(this,new AuthInfo(this, getString(R.string.weibo_sdk_id), getString(R.string.weibo_redirect_url), "direct_messages_write"));

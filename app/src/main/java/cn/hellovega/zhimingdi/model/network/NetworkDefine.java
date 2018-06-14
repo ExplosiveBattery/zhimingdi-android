@@ -23,7 +23,7 @@ public class NetworkDefine {
     public static final String HOST_BASE_URL = "http://hellovega.cn/";
     public static final String ZHIMINGDI_BASE_URL = HOST_BASE_URL + "zhimingdi/";
     public static final String AVATER_PATH_PREFIX = "avater/";
-    public static final String PIC_QUERY_URl =ZHIMINGDI_BASE_URL + "pic.php?id=";
+    public static final String PIC_QUERY_URl =ZHIMINGDI_BASE_URL + "pic.php?date=";
     public static final String VERSION_URL =ZHIMINGDI_BASE_URL+"version.php";
     public static final String BG_QUERY_SUFFIX ="&type=1";  //背景图
     public static final String SM_QUERY_SUFFIX ="&type=0";  //缩略图

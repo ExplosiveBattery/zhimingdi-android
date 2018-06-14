@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <!---Frawer-->
+    <!---Drawer-->
     <color name="drawerColor">#E6195E</color>
+
+    <!--transparent scrollview-->
+    <color name="transparent">#aa000000</color>
 
     <!--Button-->
     <color name="color_button_border">#24AD9D</color>

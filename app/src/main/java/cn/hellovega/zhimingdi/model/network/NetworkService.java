@@ -1,22 +1,16 @@
 package cn.hellovega.zhimingdi.model.network;
 
-import java.io.File;
 import java.util.List;
 
-import butterknife.OnClick;
 import cn.hellovega.zhimingdi.model.Marker;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 /**
  * Created by vega on 3/2/18.
@@ -35,6 +29,14 @@ public interface NetworkService {
     );
 
 
+    //=====
+    // 图片背景信息
+    //=====
+    @POST("info")
+    @FormUrlEncoded
+    Call<NetworkResult.ImageInfo> getInfo(
+            @Field("date") String date//yyyyMMdd
+    );
 
     //=====
     // 图片收藏

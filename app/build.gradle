@@ -53,7 +53,7 @@ dependencies {
     implementation 'com.contrarywind:Android-PickerView:3.2.7'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.Todd-Davies:ProgressWheel:1.2'
-    implementation 'com.haibin:calendarview:3.2.8'
+    implementation 'com.haibin:calendarview:3.3.2'
     implementation 'com.contrarywind:Android-PickerView:3.2.7'
     implementation 'com.allenliu.versionchecklib:library:2.0.3'
 

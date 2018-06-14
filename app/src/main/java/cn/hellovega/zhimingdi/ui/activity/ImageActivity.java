@@ -2,9 +2,11 @@ package cn.hellovega.zhimingdi.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,10 +27,16 @@ public class ImageActivity extends AppCompatActivity {
     MatrixImageView matrixImage;
     @BindView(R.id.backButton)
     ImageButton backButton;
-    @BindView(R.id.introduceButton)
-    ImageButton introduceButton;
+    @BindView(R.id.infoOpenButton)
+    ImageButton infoOpenButton;
     @BindView(R.id.starButton)
     ImageButton starButton;
+    @BindView(R.id.infoView)
+    ScrollView infoView;
+    @BindView(R.id.infoCloseButton)
+    ImageButton infoCloseButton;
+    @BindView(R.id.info)
+    TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +50,9 @@ public class ImageActivity extends AppCompatActivity {
 
         setStarDrawable();
 
-        GlideApp.with(ImageActivity.this).load(getIntent().getStringExtra("bgURL")).into(matrixImage);
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        GlideApp.with(ImageActivity.this).load(getIntent().getStringExtra("bgURL")).centerCrop().into(matrixImage);
 
         //backButton
         backButton.setOnClickListener(new ImageButton.OnClickListener(){
@@ -58,7 +68,6 @@ public class ImageActivity extends AppCompatActivity {
                 NetworkClient.service.setStar(LoginActivity.xml.getString("access_token", ""), date, String.valueOf(isStar?1:0)).enqueue(new Callback<NetworkResult>() {
                     @Override
                     public void onResponse(Call<NetworkResult> call, Response<NetworkResult> response) {
-                        Log.e(TAG, "onResponse: success" );
                         isStar = !isStar;
                         setStarDrawable();
                         if(isStar) LoginActivity.starPicDate.add(date);
@@ -70,9 +79,28 @@ public class ImageActivity extends AppCompatActivity {
                 });
             }
         });
+        infoOpenButton.setOnClickListener(new ImageButton.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                NetworkClient.service.getInfo(date).enqueue(new Callback<NetworkResult.ImageInfo>() {
+                    @Override
+                    public void onResponse(Call<NetworkResult.ImageInfo> call, Response<NetworkResult.ImageInfo> response) {
+                        tvInfo.setText(response.body().getInfo());
+                        infoView.setVisibility(View.VISIBLE);
+                    }
+                    @Override
+                    public void onFailure(Call<NetworkResult.ImageInfo> call, Throwable t) {
+                    }
+                });
+            }
+        });
+        infoCloseButton.setOnClickListener(new ImageButton.OnClickListener(){
+            @Override
+            public void onClick(View v) {
 
-
-
+                infoView.setVisibility(View.GONE);
+            }
+        });
     }
 
 
@@ -86,11 +114,11 @@ public class ImageActivity extends AppCompatActivity {
     public void changeButtonState() {
         if (backButton.getVisibility() == View.VISIBLE) {
             backButton.setVisibility(View.GONE);
-            introduceButton.setVisibility(View.GONE);
+            infoOpenButton.setVisibility(View.GONE);
             starButton.setVisibility(View.GONE);
         } else {
             backButton.setVisibility(View.VISIBLE);
-            introduceButton.setVisibility(View.VISIBLE);
+            infoOpenButton.setVisibility(View.VISIBLE);
             starButton.setVisibility(View.VISIBLE);
         }
     }

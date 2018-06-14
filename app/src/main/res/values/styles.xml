@@ -1,6 +1,5 @@
 <resources>
 
-
     <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="Theme.AppCompat.Light">
         <item name="android:typeface">monospace</item>
         <item name="windowActionBar">false</item>
@@ -26,9 +25,5 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">8dp</item>
     </style>
-
-
-
-
 
 </resources>

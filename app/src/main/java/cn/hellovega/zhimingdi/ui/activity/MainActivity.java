@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -38,8 +39,6 @@ import com.tencent.connect.share.QzonePublish;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import org.joda.time.DateTime;
 
@@ -55,7 +54,6 @@ import cn.hellovega.zhimingdi.model.DeleteFileUtil;
 import cn.hellovega.zhimingdi.model.network.NetworkDefine;
 import cn.hellovega.zhimingdi.ui.fragment.FunctionFragment;
 import cn.hellovega.zhimingdi.ui.fragment.ShadowFragment;
-import cn.hellovega.zhimingdi.ui.widget.MainDrawerLayout;
 import cn.hellovega.zhimingdi.ui.widget.NavigationItem;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.drakeet.materialdialog.MaterialDialog;
@@ -77,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     MyFragmentPagerAdapter myFragmentPagerAdapter;
     private static final int YEAR_MAX = 2100;
     private static final int YEAR_MIN = 1900;
-    /* outer SDK */
-    private IWXAPI wxApi;
+
+
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -115,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     @BindView(R.id.drawerLayoutButton)
     ImageButton drawerLayoutButton;
     @BindView(R.id.drawerLayout)
-    MainDrawerLayout drawerLayout;
+    DrawerLayout drawerLayout;
     @BindView(R.id.back_to_today)
     TextView tvBackToToday;
     @BindView(R.id.shareButton)
@@ -224,14 +222,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
 
 
-        //为了微信分享 SDK初始化
-        wxApi = WXAPIFactory.createWXAPI(this, getString(R.string.wechat_sdk_id), true);
-        wxApi.registerApp(getString(R.string.wechat_sdk_id));
-
     }
-
-
-
 
 
 
@@ -353,7 +344,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                 req.transaction = String.valueOf(System.currentTimeMillis());
                 req.message = msg;
                 req.scene = SendMessageToWX.Req.WXSceneTimeline;
-                wxApi.sendReq(req); //发送
+                LoginActivity.wxApi.sendReq(req); //发送
 
                 //这种方式限制了文件后缀名
 //                Intent intent = new Intent();
@@ -478,7 +469,6 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                     qqShareButton.startAnimation(mQQAnim);
                     wechatShareButton.startAnimation(mWechatAnim);
                     weiboShareButton.startAnimation(mWeibioAnim);
-                    drawerLayout.setAnimExec(true);
                 }else {
                     setToNormalState();
                 }
@@ -489,7 +479,6 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
 
     private void setToNormalState() {
-        drawerLayout.setAnimExec(false);
         qqShareButton.setVisibility(View.INVISIBLE);
         wechatShareButton.setVisibility(View.INVISIBLE);
         weiboShareButton.setVisibility(View.INVISIBLE);

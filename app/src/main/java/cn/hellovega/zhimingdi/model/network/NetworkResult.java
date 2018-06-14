@@ -31,5 +31,18 @@ public class NetworkResult {
         }
     }
 
+    public class ImageInfo extends NetworkResult {
+        @SerializedName("image_info")
+        String info;
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
+    }
+
 
 }

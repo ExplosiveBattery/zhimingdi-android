@@ -7,13 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Typeface;
 import android.graphics.Xfermode;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.util.Log;
 
 import org.joda.time.DateTime;
 
@@ -29,7 +27,7 @@ public class ShadowImageView extends AppCompatImageView {
     private String chineseWeekDay[] ={"星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"};
     private int mYear,mMonth,mDay;
     private static final Xfermode msXfermode = new PorterDuffXfermode(PorterDuff.Mode.XOR);
-    private  float mSingleNumSize =850f;
+    private  float mSingleNumSize = 850f;
 
 
     public ShadowImageView(Context context) {
@@ -67,7 +65,7 @@ public class ShadowImageView extends AppCompatImageView {
         //遮罩创建
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
         Canvas bitmapCanvas = new Canvas(bitmap);
-        bitmapCanvas.drawColor(0xaa000000);
+        bitmapCanvas.drawColor(0xba000000);
 
 
         //镂空文字绘制
