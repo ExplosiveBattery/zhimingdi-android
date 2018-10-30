@@ -3,7 +3,7 @@
 
 ### 起源
 一个大学生创新创业建环学院省级项目，5人团队，4美工（建环那边要画各种图）+我一个代码，同时负责IOS与Android端开发。  
-抱着了解学习一下移动端开发的想法，我应了这么差事。
+抱着了解学习一下移动端开发的想法，我应了这差事。
 ### 功能
 1. 有着日历App的功能，类似于每日故宫App的方式来展示一些手绘植物图片，借此达到科普植物知识的目的。每一天的日历页都以一幅植物图片或者植物图片的一部分为背景，点击日历页，会进入完整的植物大图，通过拖动和缩放来查看当天展示的植物，支持收藏图片，显示图片对应详细信息（我按钮已经放好了，但是她们还没有给我内容）。
 2. 最后一页为附加功能页，提供植物地图，事情记录（一般事情记录，生日记录），一般样子日历的功能
@@ -22,7 +22,7 @@
 使用熟练后，却也在获取其缓存图片位置和结合下载进度条时卡了很久
 ```Java
 GlideApp.with(xxxx).downloadOnly().load(xxxxxx).submit().get().getAbsolutePath();
-//                已经失效了的办法,我上传项目中保留了DataCacheKey....当时为了实现这个功能还去看了源码，不过现在忘得差不对了
+//                已经失效了的办法,我上传项目中保留了DataCacheKey....当时为了实现这个功能还去看了源码，不过现在忘得差不多了
 //                DiskCache disk  = DiskLruCacheWrapper.get(GlideApp.getPhotoCacheDir(MultiImageActivity.this), 250 * 1024 * 1024);
 //                DataCacheKey dataCacheKey = new DataCacheKey(new GlideUrl(url), EmptySignature.obtain());
 //                File file =disk.get(dataCacheKey);
